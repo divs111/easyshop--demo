@@ -5,7 +5,7 @@ metadata:
   namespace: easyshop
 spec:
   serviceName: "mongodb-svc"
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: mongodb
@@ -29,7 +29,12 @@ spec:
             limits:
               memory: "256Mi"
               cpu: "500m"
-      volumes:
-        - name: mongodb-data
-          persistentVolumeClaim:
-            claimName: mongodb-pvc
+  volumeClaimTemplates:
+    - metadata:
+        name: mongodb-data
+      spec:
+        accessModes: [ "ReadWriteOnce" ]
+        storageClassName: "standard"
+        resources:
+          requests:
+            storage: 5Gi
