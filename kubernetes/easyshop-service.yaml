@@ -1,12 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: easyshop-service
+  name: easyshop-svc
   namespace: easyshop
 spec:
   type: ClusterIP
   ports:
-    - port: 80
-      targetPort: 3000
+  - port: 80
+    targetPort: 3000
   selector:
     app: easyshop
+

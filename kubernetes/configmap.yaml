@@ -1,0 +1,12 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: easyshop-configmap
+  namespace: easyshop
+data:
+  MONGODB_URI: "mongodb://mongodb-0.mongodb-service.easyshop.svc.cluster.local:27017/easyshop"
+  NODE_ENV: "production"
+  JWT_SECRET: 6bf3d3239cf9259cc8381782393c6d790f4286f44b17d5b2a9afc407fd2f8286
+  NEXTAUTH_SECRET: oCXmaxfcxG1bcQsaBg5BthXcG9hTiukiBvB8P6I6bQE=
+  NEXT_PUBLIC_API_URL: "https://34.249.219.6/api"
+  NEXTAUTH_URL: "https://34.249.219.6"
